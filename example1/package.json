@@ -1,0 +1,17 @@
+{
+  "name": "example1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "echo 'Pre-start runs before start'",
+    "start": "echo 'START'",
+    "poststart": "echo 'Post-start runs after start'",
+    "withargs": "echo ARGS",
+    "pipeline": "echo one two three four | wc"
+  },
+  "keywords": [],
+  "author": "David Herron <david@davidherron.com>",
+  "license": "ISC"
+}
