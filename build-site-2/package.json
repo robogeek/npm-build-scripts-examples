@@ -1,0 +1,22 @@
+{
+  "name": "build-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-site-old": "npm-run-all build:less build:render build:deploy",
+    "build-site": "npm-run-all build:*",
+    "build:less": "lessc site/style.less build/style.css",
+    "build:render": "mustache data.json site/index.mustache | html-minifier -o build/index.html",
+    "build:deploy": "cd build && rsync --archive --delete --verbose ./ user-name@remote-host.com:docroot-directory/"
+  },
+  "keywords": [],
+  "author": "David Herron <david@davidherron.com>",
+  "license": "ISC",
+  "dependencies": {
+    "html-minifier": "^4.0.0",
+    "lessc": "^1.0.2",
+    "mustache": "^4.0.1",
+    "npm-run-all": "^4.1.5"
+  }
+}
